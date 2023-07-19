@@ -1,8 +1,11 @@
 * {
     margin: 0;
     --amarillo: #fcd404;
+    /* max-width: 100%; */
+    overflow-x: hidden;
 
 }
+
 
 #firstScreen {
     background: url(./Backgroud/Imagen17.png) center no-repeat;
@@ -12,16 +15,28 @@
     height: 100vh;
 
     display: flex;
-    flex-flow: column;
 
     justify-content: center;
     align-items: center;
+
+    position: relative;
+    overflow: hidden;
+}
+
+#presentationText {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    overflow: hidden;
+
+    /* height: 450px; */
 }
 
 .titleHigh {
     color: transparent;
     -webkit-text-stroke: 4px white;
     text-shadow: none;
+    width: 79%;
 
     font-size: 141px;
 
@@ -30,6 +45,7 @@
          url('agrandir-wide-heavy-italic-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+
 }
 
 .subTitle {
@@ -57,11 +73,74 @@
 
 }
 
-#button {
+#button1 {
     font-size: 22px;
     color: black;
 
     background-color: var(--amarillo);
-    width: 498px;
-    height: 77px;
+    padding: 15px 60px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    cursor: pointer;
+
+    font-family: 'agrandirwide';
+    src: url('agrandir-wide-webfont.woff2') format('woff2'),
+         url('agrandir-wide-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+    transition: .5s;
+}
+
+#button1:hover {
+    scale: 1.1;
+    transition: 1s;
+    box-shadow: 0px 0px 10px 1px #fcd404;
+}
+
+/* TRIANGLE */
+
+.triangle {
+    width: 700px;
+    position: absolute;
+    z-index: 1;
+
+    /* transition: 2s ease-out; */
+}
+
+.triangleRigth {
+    margin-top: -850px;
+
+    animation: triangleRigth .2s ease-in;
+}
+
+.triangleLeft {
+    margin-top: -300px;
+    margin-left: -800px;
+
+    animation:  triangleLeft 350ms ease-out;
+}
+
+
+/* .triangleRigth::after {
+    margin-top: -800px;
+}
+
+.triangleLeft::after {
+    margin-top: -300px;
+    margin-left: -800px;
+} */
+
+@keyframes triangleRigth {
+    
+    0% {
+        transform: translateX(400px);
+    }
+}
+
+@keyframes triangleLeft {
+    0% {
+        transform: translateX(-400px);
+    }
 }
